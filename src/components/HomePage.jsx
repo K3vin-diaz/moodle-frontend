@@ -1,51 +1,49 @@
-import React, { useState } from 'react';
 import '../styles/HomePage.css';
 
-function HomePage() {
-  const [isSidebarHidden, setSidebarHidden] = useState(false);
-  const toggleSidebar = () => {
-    const sidebar = document.querySelector('.sidebar');
-    if (isSidebarHidden) {
-        sidebar.style.transform = 'translateX(0)'; /* Muestra el sidebar */
-    } else {
-        sidebar.style.transform = 'translateX(-100%)'; /* Oculta el sidebar */
-    }
-    setSidebarHidden(!isSidebarHidden);
-};
 
+const App = () => {
   return (
-    <div className="HomePage">
-      <header className="HomePage-header">
-        <form action="#" method="get">
-          <input type="search" name="search" placeholder="Buscar..." />
-          <button type="submit">Buscar</button>
-        </form>
-        <div className="logo-circle">
-          {/* Logo aquí */}
+    <div className="container">
+      <header className="header">
+        <div className="menu">Menu</div>
+        <h1 className="title">INSTITUTO TECNOLOGICO DE SONORA</h1>
+        <div className="profile">
+          <img src="profile-pic-url" alt="profile" className="profile-pic" />
+          <button className="logout">Log out</button>
         </div>
-        <button onClick={toggleSidebar}>
-          {isSidebarHidden ? 'Menu' : 'Menu'}
-        </button>
       </header>
-
-      <div className={`container ${isSidebarHidden ? 'hidden' : ''}`}>
-        <aside className="sidebar">
+      <aside className="sidebar">
+        <nav className="top-nav">
           <ul>
-            <li><a href="#">Categoría 1</a></li>
-            <li><a href="#">Subcategoría 1.1</a></li>
-            <li><a href="#">Subcategoría 1.2</a></li>
-            <li><a href="#">Categoría 2</a></li>
-            <li><a href="#">Subcategoría 2.1</a></li>
-            <li><a href="#">Subcategoría 2.2</a></li>
+            <li>Inicio</li>
+            <li>Calendario</li>
+            <li>Cursos</li>
+            <li>Revisar</li>
+            <li>Crear Recurso</li>
           </ul>
-        </aside>
-
-        <main className="context">
-          {/* Contenido aquí */}
-        </main>
-      </div>
+        </nav>
+        <nav className="bottom-nav">
+          <ul>
+            <li>Cursos Archivados</li>
+            <li>Ajustes</li>
+          </ul>
+        </nav>
+      </aside>
+      <main className="main">
+        <div className="courses">
+          <div className="course">CURSOS</div>
+          <div className="course">CURSOS</div>
+          <div className="course">CURSOS</div>
+          <div className="course">CURSOS</div>
+          <div className="course">CURSOS</div>
+          <div className="course">CURSOS</div>
+        </div>
+      </main>
+      <footer className="footer">
+        Footer
+      </footer>
     </div>
   );
-};
+}
 
-export default HomePage;
+export default App;
