@@ -10,4 +10,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/webservice': {
+        target: 'http://localhost:8200/webservice/rest/server.php',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/webservice/, ''),
+      }
+    }
+  }
 })
