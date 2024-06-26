@@ -37,3 +37,33 @@ export interface Courseformatoption {
   name: string;
   value: number;
 }
+
+export type CourseContent = {
+  id: string
+  name: string
+  visible: number
+  summary: string
+  summaryformat: number
+  section: number
+  uservisible: boolean
+  modules: {
+    id: string
+    url: string
+    name: string
+    instance: number
+    contextid: number
+    visible: 1
+    uservisible: boolean
+    visiblecoursepage: boolean
+    modicon: string
+    modname: string
+    modplural: string
+    availability: null
+    indent: number
+    onclick: string
+    afterlink: null
+    customdata: string
+    noviewlink: false
+    completion: 0
+  }
+}

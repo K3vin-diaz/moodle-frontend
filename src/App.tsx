@@ -1,3 +1,9 @@
-export default function App() {
-  return <h1>pene</h1>;
+import { Router } from "./Router";
+
+function App() {
+  return (
+    <Router />
+  );
 }
+
+export default App;

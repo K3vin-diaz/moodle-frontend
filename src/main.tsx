@@ -3,22 +3,17 @@ import ReactDOM from "react-dom/client";
 
 import "./global.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Courses from "./pages/Courses.tsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+import App from "./App.tsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Courses />,
-  },
-  {
-    path: "/courses/:id",
-    element: <p>Course</p>,
-  }
-]);
+
+const queryClient = new QueryClient()
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
